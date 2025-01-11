@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const name = 'Oli Booty'
 
-const skills = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'CSS', 'MongoDB', 'AWS', 'Docker']
+const skills = ['JavaScript', 'TypeScript', 'React', '(S)CSS', 'Node.js', 'MongoDB', 'vitest', 'Cypress', 'Git']
 
 const BASE_PATH = '/portfolio'
 
@@ -12,13 +12,13 @@ const projects = [
   {
     src: `${BASE_PATH}/rachael_site_screenshot.png`,
     alt: "Screenshot of Rachael's website",
-    description: "A freelance project, built with minimal tech and hosted on github pages.",
+    description: "A freelance project. Hosted on Vercel. Built with HTML, CSS, and a sprinkling of JavaScript.",
     link: "https://rachaelreflex.com"
   },
   {
     src: `${BASE_PATH}/portfolio_site_screenshot.png`,
     alt: "Screenshot of this portfolio website",
-    description: "This portfolio website, co-created with v0 and copilot.",
+    description: "This portfolio website, bootstrapped with v0 and co-created with copilot. Hosted on github pages. Built with Next.js and Tailwind CSS.",
     link: "https://olibooty.github.io/portfolio/"
   }
 ]
@@ -43,7 +43,7 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8">Full Stack Software Developer</h2>
           <p className="text-lg max-w-2xl">
             A front-end focused, full-stack developer passionate about building accessible and
-            user-friendly web experiences, I have been delivering results freelanc and for startups,
+            user-friendly web experiences, I have been delivering results freelance and for startups,
             enterprise and agencies since 2018, and have even led an award-winning project.
           </p>
         </section>
@@ -83,16 +83,16 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
           <div className="flex space-x-4">
             <Link href="https://github.com/olibooty" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
-              <Github size={24} />
+              <Github size={24} aria-hidden />
               <span className="sr-only">GitHub</span>
             </Link>
             <Link href="https://www.linkedin.com/in/oliver-booty" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
-              <Linkedin size={24} />
+              <Linkedin size={24} aria-hidden />
               <span className="sr-only">LinkedIn</span>
             </Link>
             <Link href="mailto:oliverbootyltd@gmail.com" rel="noreferrer" content="nofollow"
              className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
-              <Mail size={24} />
+              <Mail size={24} aria-hidden />
               <span className="sr-only">Email</span>
             </Link>
           </div>
@@ -100,7 +100,7 @@ export default function Home() {
       </main>
 
       <footer className="p-6 text-center text-gray-600 dark:text-gray-400">
-        <p>&copy; {new Date().getFullYear()} {name}. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} {name}</p>
       </footer>
     </div>
   )
