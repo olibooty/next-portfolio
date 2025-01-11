@@ -1,9 +1,27 @@
 import { Github, Linkedin, Mail } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const name = 'Oli Booty'
 
 const skills = ['JavaScript', 'TypeScript', 'React', 'Node.js', 'CSS', 'MongoDB', 'AWS', 'Docker']
+
+const BASE_PATH = '/portfolio'
+
+const projects = [
+  {
+    src: `${BASE_PATH}/rachael_site_screenshot.png`,
+    alt: "Screenshot of Rachael's website",
+    description: "A freelance project, built with minimal tech and hosted on github pages.",
+    link: "https://rachaelreflex.com"
+  },
+  {
+    src: `${BASE_PATH}/portfolio_site_screenshot.png`,
+    alt: "Screenshot of this portfolio website",
+    description: "This portfolio website, co-created with v0 and copilot.",
+    link: "https://olibooty.github.io/portfolio/"
+  }
+]
 
 export default function Home() {
   return (
@@ -25,16 +43,36 @@ export default function Home() {
           <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8">Full Stack Software Developer</h2>
           <p className="text-lg max-w-2xl">
             A front-end focused, full-stack developer passionate about building accessible and
-            user-friendly web experiences, I have been delivering results for startups, 
+            user-friendly web experiences, I have been delivering results freelanc and for startups,
             enterprise and agencies since 2018, and have even led an award-winning project.
           </p>
+        </section>
+
+        <section id="projects" className="mb-20">
+          <h2 className="text-3xl font-bold mb-6">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {projects.map((project) => (
+              <Link key={project.src} href={project.link} target='_blank' className="flex flex-col gap-4 bg-white dark:bg-gray-800 p-4 rounded shadow hover:shadow-lg transition-shadow">
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  width={640}
+                  height={360}
+                  className="rounded object-cover aspect-video"
+                  priority
+                />
+
+                <p className="text-lg">{project.description}</p>
+              </Link>
+            ))}
+          </div>
         </section>
 
         <section id="skills" className="mb-20">
           <h2 className="text-3xl font-bold mb-6">Skills</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {skills.map((skill) => (
-              <div key={skill} className="bg-white dark:bg-gray-800 p-4 rounded shadow">
+              <div key={skill} className="bg-white dark:bg-gray-800 p-4 rounded shadow hover:shadow-lg transition-shadow">
                 {skill}
               </div>
             ))}
@@ -52,7 +90,8 @@ export default function Home() {
               <Linkedin size={24} />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link href="mailto:oliverbootyltd@gmail.com" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
+            <Link href="mailto:oliverbootyltd@gmail.com" rel="noreferrer" content="nofollow"
+             className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100">
               <Mail size={24} />
               <span className="sr-only">Email</span>
             </Link>
