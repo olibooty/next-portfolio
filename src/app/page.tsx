@@ -12,14 +12,16 @@ const projects = [
   {
     src: `${BASE_PATH}/rachael_site_screenshot.png`,
     alt: "Screenshot of Rachael's website",
-    description: "A freelance project. Hosted on Vercel. Built with HTML, CSS, and a sprinkling of JavaScript.",
-    link: "https://rachaelreflex.com"
+    description: "A freelance project. Hosted on Github pages. Built with HTML, CSS, and a sprinkling of JavaScript.",
+    projectLink: "https://rachaelreflex.com",
+    codeLink: "https://github.com/olibooty/rachael-reflex"
   },
   {
     src: `${BASE_PATH}/portfolio_site_screenshot.png`,
     alt: "Screenshot of this portfolio website",
-    description: "This portfolio website, bootstrapped with v0 and co-created with copilot. Hosted on github pages. Built with Next.js and Tailwind CSS.",
-    link: "https://olibooty.github.io/portfolio/"
+    description: "This portfolio website, bootstrapped with v0 and co-created with copilot. Hosted on Github pages. Built with Next.js and Tailwind CSS.",
+    projectLink: "https://olibooty.github.io/portfolio",
+    codeLink: "https://github.com/olibooty/portfolio"
   }
 ]
 
@@ -52,7 +54,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-6">Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project) => (
-              <Link key={project.src} href={project.link} target='_blank' className="flex flex-col gap-4 bg-white dark:bg-gray-800 p-4 rounded shadow hover:shadow-lg transition-shadow">
+              <div key={project.src} className="flex flex-col gap-4 bg-white dark:bg-gray-800 p-4 rounded shadow hover:shadow-lg transition-shadow">
                 <Image
                   src={project.src}
                   alt={project.alt}
@@ -63,7 +65,13 @@ export default function Home() {
                 />
 
                 <p className="text-lg">{project.description}</p>
-              </Link>
+
+                <div className="flex gap-2 mt-auto">
+                  <Link href={project.projectLink} target='_blank' className="text-blue-600 dark:text-blue-400 hover:underline">View Project</Link>
+                  <span aria-hidden>|</span>
+                  <Link href={project.codeLink} target='_blank' className="text-blue-600 dark:text-blue-400 hover:underline">View Code</Link>
+                </div>
+              </div>
             ))}
           </div>
         </section>
