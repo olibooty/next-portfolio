@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
+import { RoleTypeout } from "@/components/RoleTypeout/RoleTypeout";
 import { Section } from "@/components/Section/Section";
 import { SkillTag } from "@/components/SkillTag/SkillTag";
 import { SkillTagContainer } from "@/components/SkillTagContainer/SkillTagContainer";
@@ -48,7 +49,7 @@ export default function Home() {
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">{name}</h1>
 
                 <div className="flex flex-col gap-20">
-                    <Section id="about" heading="Full Stack Software Developer">
+                    <Section id="about" heading={<RoleTypeout />}>
                         <p className="text-lg max-w-2xl">
                             A front-end focused, full-stack developer passionate
                             about building accessible and user-friendly web
