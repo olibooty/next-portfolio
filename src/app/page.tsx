@@ -1,6 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
+import { ProjectCard } from "./components/ProjectCard/ProjectCard";
+import { Project } from "./types/Project";
 
 const name = "Oli Booty";
 
@@ -18,7 +19,7 @@ const skills = [
 
 const BASE_PATH = "/portfolio";
 
-const projects = [
+const projects: Project[] = [
     {
         src: `${BASE_PATH}/rachael_site_screenshot.png`,
         alt: "Screenshot of Rachael's website",
@@ -72,39 +73,7 @@ export default function Home() {
                     <h2 className="text-3xl font-bold mb-6">Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {projects.map((project) => (
-                            <div
-                                key={project.src}
-                                className="flex flex-col gap-4 bg-white dark:bg-gray-800 p-4 rounded shadow hover:shadow-lg transition-shadow"
-                            >
-                                <Image
-                                    src={project.src}
-                                    alt={project.alt}
-                                    width={640}
-                                    height={360}
-                                    className="rounded object-cover aspect-video"
-                                    priority
-                                />
-
-                                <p className="text-lg">{project.description}</p>
-
-                                <div className="flex gap-2 mt-auto">
-                                    <Link
-                                        href={project.projectLink}
-                                        target="_blank"
-                                        className="text-blue-600 dark:text-blue-400 hover:underline"
-                                    >
-                                        View Project
-                                    </Link>
-                                    <span aria-hidden>|</span>
-                                    <Link
-                                        href={project.codeLink}
-                                        target="_blank"
-                                        className="text-blue-600 dark:text-blue-400 hover:underline"
-                                    >
-                                        View Code
-                                    </Link>
-                                </div>
-                            </div>
+                            <ProjectCard key={project.src} {...project} />
                         ))}
                     </div>
                 </section>
