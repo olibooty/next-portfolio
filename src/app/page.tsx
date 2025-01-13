@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
+import { Section } from "@/components/Section/Section";
 import { SkillTag } from "@/components/SkillTag/SkillTag";
 import { SkillTagContainer } from "@/components/SkillTagContainer/SkillTagContainer";
 import { Project } from "@/types/Project";
@@ -57,66 +58,61 @@ export default function Home() {
             <main className="container mx-auto px-6 py-12">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">{name}</h1>
 
-                <section id="about" className="mb-20">
-                    <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8">
-                        Full Stack Software Developer
-                    </h2>
+                <div className="flex flex-col gap-20">
+                    <Section id="about" heading="Full Stack Software Developer">
+                        <p className="text-lg max-w-2xl">
+                            A front-end focused, full-stack developer passionate
+                            about building accessible and user-friendly web
+                            experiences. Delivering results for startups,
+                            enterprise and agencies since 2018, including
+                            leading on award-winning projects.
+                        </p>
+                    </Section>
 
-                    <p className="text-lg max-w-2xl">
-                        A front-end focused, full-stack developer passionate
-                        about building accessible and user-friendly web
-                        experiences. Delivering results for startups, enterprise
-                        and agencies since 2018, including leading on
-                        award-winning projects.
-                    </p>
-                </section>
+                    <Section id="projects" heading="Projects">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {projects.map((project) => (
+                                <ProjectCard key={project.src} {...project} />
+                            ))}
+                        </div>
+                    </Section>
 
-                <section id="projects" className="mb-20">
-                    <h2 className="text-3xl font-bold mb-6">Projects</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {projects.map((project) => (
-                            <ProjectCard key={project.src} {...project} />
-                        ))}
-                    </div>
-                </section>
+                    <Section id="skills" heading="Key Skills">
+                        <SkillTagContainer>
+                            {skills.map((skill) => (
+                                <SkillTag key={skill} skill={skill} />
+                            ))}
+                        </SkillTagContainer>
+                    </Section>
 
-                <section id="skills" className="mb-20">
-                    <h2 className="text-3xl font-bold mb-6">Key Skills</h2>
-                    <SkillTagContainer>
-                        {skills.map((skill) => (
-                            <SkillTag key={skill} skill={skill} />
-                        ))}
-                    </SkillTagContainer>
-                </section>
-
-                <section id="contact">
-                    <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
-                    <div className="flex space-x-4">
-                        <Link
-                            href="https://github.com/olibooty"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
-                        >
-                            <Github size={24} aria-hidden />
-                            <span className="sr-only">GitHub</span>
-                        </Link>
-                        <Link
-                            href="https://www.linkedin.com/in/oliver-booty"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
-                        >
-                            <Linkedin size={24} aria-hidden />
-                            <span className="sr-only">LinkedIn</span>
-                        </Link>
-                        <Link
-                            href="mailto:oliverbootyltd@gmail.com"
-                            rel="noreferrer"
-                            content="nofollow"
-                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
-                        >
-                            <Mail size={24} aria-hidden />
-                            <span className="sr-only">Email</span>
-                        </Link>
-                    </div>
-                </section>
+                    <Section id="contact" heading="Get in Touch">
+                        <div className="flex space-x-4">
+                            <Link
+                                href="https://github.com/olibooty"
+                                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                            >
+                                <Github size={24} aria-hidden />
+                                <span className="sr-only">GitHub</span>
+                            </Link>
+                            <Link
+                                href="https://www.linkedin.com/in/oliver-booty"
+                                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                            >
+                                <Linkedin size={24} aria-hidden />
+                                <span className="sr-only">LinkedIn</span>
+                            </Link>
+                            <Link
+                                href="mailto:oliverbootyltd@gmail.com"
+                                rel="noreferrer"
+                                content="nofollow"
+                                className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100"
+                            >
+                                <Mail size={24} aria-hidden />
+                                <span className="sr-only">Email</span>
+                            </Link>
+                        </div>
+                    </Section>
+                </div>
             </main>
 
             <footer className="p-6 text-center text-gray-600 dark:text-gray-400">
