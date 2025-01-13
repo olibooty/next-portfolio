@@ -24,7 +24,7 @@ const BASE_PATH = "/portfolio";
 
 const projects: Project[] = [
     {
-        src: `${BASE_PATH}/rachael_site_screenshot.png`,
+        src: `${BASE_PATH}/rachael_site_screenshot_s.png`,
         alt: "Screenshot of Rachael's website",
         description:
             "A freelance project. Hosted on Github pages. Built with HTML, CSS, and a sprinkling of JavaScript.",
@@ -32,7 +32,7 @@ const projects: Project[] = [
         codeLink: "https://github.com/olibooty/rachael-reflex",
     },
     {
-        src: `${BASE_PATH}/portfolio_site_screenshot.png`,
+        src: `${BASE_PATH}/portfolio_site_screenshot_s.png`,
         alt: "Screenshot of this portfolio website",
         description:
             "This portfolio website, bootstrapped with v0 and co-created with copilot. Hosted on Github pages. Built with Next.js and Tailwind CSS.",
