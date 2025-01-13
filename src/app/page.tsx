@@ -53,19 +53,19 @@ export default function Home() {
       </header> */}
 
             <main className="container mx-auto px-6 py-12">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4">{name}</h1>
+
                 <section id="about" className="mb-20">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-4">
-                        {name}
-                    </h1>
                     <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-400 mb-8">
                         Full Stack Software Developer
                     </h2>
+
                     <p className="text-lg max-w-2xl">
                         A front-end focused, full-stack developer passionate
                         about building accessible and user-friendly web
-                        experiences, I have been delivering results freelance
-                        and for startups, enterprise and agencies since 2018,
-                        and have even led an award-winning project.
+                        experiences. Delivering results for startups, enterprise
+                        and agencies since 2018, including leading on
+                        award-winning projects.
                     </p>
                 </section>
 
@@ -79,7 +79,7 @@ export default function Home() {
                 </section>
 
                 <section id="skills" className="mb-20">
-                    <h2 className="text-3xl font-bold mb-6">Skills</h2>
+                    <h2 className="text-3xl font-bold mb-6">Key Skills</h2>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         {skills.map((skill) => (
                             <div
