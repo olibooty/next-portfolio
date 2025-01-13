@@ -1,9 +1,9 @@
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
+import { SkillTag } from "@/components/SkillTag/SkillTag";
+import { SkillTagContainer } from "@/components/SkillTagContainer/SkillTagContainer";
 import { Project } from "@/types/Project";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
-import { ProjectCard } from "./components/ProjectCard/ProjectCard";
-import { Project } from "./types/Project";
 
 const name = "Oli Booty";
 
@@ -82,16 +82,11 @@ export default function Home() {
 
                 <section id="skills" className="mb-20">
                     <h2 className="text-3xl font-bold mb-6">Key Skills</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <SkillTagContainer>
                         {skills.map((skill) => (
-                            <div
-                                key={skill}
-                                className="bg-white dark:bg-gray-800 p-4 rounded shadow hover:shadow-lg transition-shadow"
-                            >
-                                {skill}
-                            </div>
+                            <SkillTag key={skill} skill={skill} />
                         ))}
-                    </div>
+                    </SkillTagContainer>
                 </section>
 
                 <section id="contact">
