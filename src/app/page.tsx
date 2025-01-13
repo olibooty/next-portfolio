@@ -1,3 +1,5 @@
+import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
+import { Project } from "@/types/Project";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import { ProjectCard } from "./components/ProjectCard/ProjectCard";
