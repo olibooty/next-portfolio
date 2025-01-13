@@ -124,7 +124,8 @@ export default function Home() {
 
             <footer className="p-6 text-center text-gray-600 dark:text-gray-400">
                 <p>
-                    &copy; {new Date().getFullYear()} {name}
+                    &copy; {new Date().getFullYear()} {name}{" "}
+                    <span aria-hidden>|</span> Built with ❤️ and 🤖
                 </p>
             </footer>
         </div>
