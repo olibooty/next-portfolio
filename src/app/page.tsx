@@ -44,17 +44,6 @@ const projects: Project[] = [
 export default function Home() {
     return (
         <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-            {/* <header className="p-6">
-        <nav className="container mx-auto flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold">{name}</Link>
-          <ul className="flex space-x-4">
-            <li><Link href="#about" className="hover:underline">About</Link></li>
-            <li><Link href="#skills" className="hover:underline">Skills</Link></li>
-            <li><Link href="#contact" className="hover:underline">Contact</Link></li>
-          </ul>
-        </nav>
-      </header> */}
-
             <main className="container mx-auto px-6 py-12">
                 <h1 className="text-4xl md:text-6xl font-bold mb-4">{name}</h1>
 
