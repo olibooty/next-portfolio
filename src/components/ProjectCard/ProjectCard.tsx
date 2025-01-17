@@ -19,23 +19,27 @@ export const ProjectCard = (props: Project) => {
 
             <p className="text-lg">{props.description}</p>
 
-            <div className="flex gap-2 mt-auto">
-                <Link
-                    href={props.projectLink}
-                    target="_blank"
-                    className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                    View Project
-                </Link>
-                <span aria-hidden>|</span>
-                <Link
-                    href={props.codeLink}
-                    target="_blank"
-                    className="text-blue-600 dark:text-blue-400 hover:underline"
-                >
-                    View Code
-                </Link>
-            </div>
+            {(props.projectLink || props.codeLink) && (
+                <div className="flex gap-2 mt-auto">
+                    {props.projectLink && <Link
+                        href={props.projectLink}
+                        target="_blank"
+                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                        View Project
+                    </Link>}
+
+                    {props.projectLink && props.codeLink && <span aria-hidden>|</span>}
+
+                    {props.codeLink && <Link
+                        href={props.codeLink}
+                        target="_blank"
+                        className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                        View Code
+                    </Link>}
+                </div>
+            )}
         </div>
     );
 };
