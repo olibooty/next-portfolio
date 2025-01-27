@@ -1,3 +1,4 @@
+import { PageCounter } from "@/components/PageCounter/PageCounter";
 import { ProjectCard } from "@/components/ProjectCard/ProjectCard";
 import { RoleTypeout } from "@/components/RoleTypeout/RoleTypeout";
 import { Section } from "@/components/Section/Section";
@@ -35,7 +36,8 @@ const projects: Project[] = [
     {
         src: `${BASE_PATH}/Grafana_screenshot_s.png`,
         alt: "Screenshot of Grafana dashboard showing analytics of Raspberry Pi",
-        description: "A hobby project, exporting Raspberry Pi data with prometheus - including network traffic and disk space - and displaying it on a Grafana dashboard",
+        description:
+            "A hobby project, exporting Raspberry Pi data with prometheus - including network traffic and disk space - and displaying it on a Grafana dashboard",
     },
     {
         src: `${BASE_PATH}/portfolio_site_screenshot_s.png`,
@@ -115,6 +117,8 @@ export default function Home() {
                     &copy; {new Date().getFullYear()} {name}{" "}
                     <span aria-hidden>|</span> Built with ❤️ and 🤖
                 </p>
+
+                <PageCounter />
             </footer>
         </div>
     );
